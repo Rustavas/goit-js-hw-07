@@ -17,7 +17,7 @@ alt='${description}'
 
 refs.gallery.insertAdjacentHTML('beforeend', listItems);
 
-console.log(refs.gallery);
+// console.log(refs.gallery);
 
 // console.log(galleryItems);
 
