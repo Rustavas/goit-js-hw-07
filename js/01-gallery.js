@@ -5,21 +5,24 @@ const refs = {
   gallery: document.querySelector('.gallery'),
 } ;
 
-const listItems = galleryItems.map(({preview, original, description}) => {
-return `<li class='gallery__item'>
-<a class='gallery__link' href='${original}'
-<img class="gallery__image"
-src="${preview}"
-data-source='${original}'
-alt='${description}'
-/></a></li>`;
-}).join('');
+
+const listItems = galleryItems
+  .map(({ preview, original, description }) => {
+    return `<div class="gallery__item">
+  <a class="gallery__link" href="${original}">
+    <img
+      class="gallery__image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+    />
+  </a>
+</div>
+  `;
+  })
+  .join('');
 
 refs.gallery.insertAdjacentHTML('beforeend', listItems);
-
-// console.log(refs.gallery);
-
-// console.log(galleryItems);
 
 refs.gallery.addEventListener('click', onOpenModal)
 
